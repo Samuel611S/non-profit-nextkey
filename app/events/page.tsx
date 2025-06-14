@@ -73,34 +73,51 @@ export default function EventsPage() {
           <h2 className="text-3xl font-bold text-nextkey-purple mb-8">Upcoming Events</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {upcomingEvents.map((event, index) => (
-              <Card key={index} className="overflow-hidden">
+              <Card key={index} className="overflow-hidden flex flex-col h-full">
                 <div className="relative h-48">
                   <Image src={event.image || "/placeholder.svg"} alt={event.title} fill className="object-cover" />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-xl text-nextkey-purple line-clamp-2">{event.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center text-gray-600">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{event.date}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600">
-                      <Clock className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{event.time}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{event.location}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 text-sm">{event.description}</p>
-                  <Button className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl">RSVP / Get Tickets</Button>
-                  {event.ticketLink !== "#" && (
-                    <p className="text-xs text-center text-gray-500">Get tickets at: {event.ticketLink}</p>
-                  )}
-                </CardContent>
+                <CardContent className="flex flex-col justify-between flex-grow space-y-4">
+  <div>
+    <div className="space-y-2">
+      <div className="flex items-center text-gray-600">
+        <Calendar className="h-4 w-4 mr-2" />
+        <span className="text-sm">{event.date}</span>
+      </div>
+      <div className="flex items-center text-gray-600">
+        <Clock className="h-4 w-4 mr-2" />
+        <span className="text-sm">{event.time}</span>
+      </div>
+      <div className="flex items-center text-gray-600">
+        <MapPin className="h-4 w-4 mr-2" />
+        <span className="text-sm">{event.location}</span>
+      </div>
+    </div>
+    <p className="text-gray-700 text-sm mt-4">{event.description}</p>
+  </div>
+
+  <div className="flex flex-col items-center gap-2 min-h-[72px]">
+    <Button className="w-full max-w-[240px] bg-nextkey-purple hover:bg-purple-800 rounded-xl">
+      RSVP / Get Tickets
+    </Button>
+    <p className="text-xs text-center text-gray-500 h-4">
+      {event.ticketLink !== "#" ? (
+        <>
+          Get tickets at:{" "}
+          <a href={`https://${event.ticketLink}`} className="underline">
+            {event.ticketLink}
+          </a>
+        </>
+      ) : (
+        <span>&nbsp;</span>
+      )}
+    </p>
+  </div>
+</CardContent>
+
               </Card>
             ))}
           </div>
