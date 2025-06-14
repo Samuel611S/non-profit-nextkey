@@ -1,0 +1,143 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Mail, MapPin, Instagram } from "lucide-react"
+
+export default function ContactPage() {
+  return (
+    <div className="min-h-screen py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-nextkey-purple mb-6">Contact Us</h1>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            We're here to help. Whether you need assistance, want to get involved, or have questions about our programs,
+            don't hesitate to reach out.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl text-nextkey-purple">Get in Touch</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <Mail className="h-6 w-6 text-nextkey-purple mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Email</h3>
+                    <p className="text-gray-600">info@nextkeyhousingaccess.org</p>
+                    <p className="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Instagram className="h-6 w-6 text-nextkey-purple mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Social Media</h3>
+                    <p className="text-gray-600">@nextkeyhousing</p>
+                    <p className="text-sm text-gray-500 mt-1">Follow us for updates and community stories</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <MapPin className="h-6 w-6 text-nextkey-purple mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Service Area</h3>
+                    <p className="text-gray-600">Queens, NY and surrounding areas</p>
+                    <p className="text-sm text-gray-500 mt-1">Serving families throughout the community</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Office Hours */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl text-nextkey-purple">Office Hours</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Monday - Friday</span>
+                    <span className="font-medium">9:00 AM - 5:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Saturday</span>
+                    <span className="font-medium">10:00 AM - 2:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Sunday</span>
+                    <span className="font-medium">Closed</span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-500 mt-4">Emergency assistance available 24/7 through our hotline</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Contact Form */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl text-nextkey-purple">Send Us a Message</CardTitle>
+              <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
+            </CardHeader>
+            <CardContent>
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="firstName">First Name *</Label>
+                    <Input id="firstName" placeholder="Your first name" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="lastName">Last Name *</Label>
+                    <Input id="lastName" placeholder="Your last name" required />
+                  </div>
+                </div>
+
+                <div>
+                  <Label htmlFor="email">Email *</Label>
+                  <Input id="email" type="email" placeholder="your.email@example.com" required />
+                </div>
+
+                <div>
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                </div>
+
+                <div>
+                  <Label htmlFor="subject">Subject *</Label>
+                  <Input id="subject" placeholder="What is this regarding?" required />
+                </div>
+
+                <div>
+                  <Label htmlFor="message">Message *</Label>
+                  <Textarea id="message" placeholder="Tell us how we can help you..." rows={6} required />
+                </div>
+
+                <Button className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl" size="lg">
+                  Send Message
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Emergency Contact */}
+        <div className="mt-16 bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+          <h2 className="text-2xl font-bold text-red-800 mb-4">Emergency Housing Assistance</h2>
+          <p className="text-red-700 mb-4">
+            If you're facing immediate eviction or homelessness, please contact us right away.
+          </p>
+          <Button className="bg-red-600 hover:bg-red-700 text-white rounded-xl" size="lg" >
+            Emergency Contact
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}

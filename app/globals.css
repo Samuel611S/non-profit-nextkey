@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nextkey-purple: #663399;
+  --nextkey-light-purple: #e6d7ff;
+  --nextkey-gold: #ffd700;
+}
+
+.bg-nextkey-purple {
+  background-color: var(--nextkey-purple);
+}
+
+.bg-nextkey-light-purple {
+  background-color: var(--nextkey-light-purple);
+}
+
+.bg-nextkey-gold {
+  background-color: var(--nextkey-gold);
+}
+
+.text-nextkey-purple {
+  color: var(--nextkey-purple);
+}
+
+.text-nextkey-gold {
+  color: var(--nextkey-gold);
+}
+
+.border-nextkey-purple {
+  border-color: var(--nextkey-purple);
+}
+
+.hover\:bg-nextkey-purple:hover {
+  background-color: var(--nextkey-purple);
+}
