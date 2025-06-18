@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Instagram, Mail } from "lucide-react"
+import { Instagram, Mail, MapPin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -8,52 +8,51 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-2">
+            <div className="space-y-2 text-sm">
               <p className="flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                info@nextkeyhousingaccess.org
+                <a href="mailto:NextKeyFoundation.com@gmail.com">NextKeyFoundation.com@gmail.com</a>
               </p>
               <p className="flex items-center">
                 <Instagram className="h-4 w-4 mr-2" />
-                @nextkeyhousing
+                <a href="https://instagram.com/nextkeyhousing" target="_blank" rel="noopener noreferrer">@nextkeyhousing</a>
+              </p>
+              <p className="flex items-center">
+                <MapPin className="h-4 w-4 mr-2" />
+                New York, NY
               </p>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <div className="space-y-2">
-              <Link href="/programs" className="block hover:text-nextkey-gold transition-colors">
-                Our Programs
-              </Link>
-              <Link href="/get-involved" className="block hover:text-nextkey-gold transition-colors">
-                Get Involved
-              </Link>
-              <Link href="/events" className="block hover:text-nextkey-gold transition-colors">
-                Events
-              </Link>
-              <Link href="#" className="block hover:text-nextkey-gold transition-colors">
-                Bonfire Merch
-              </Link>
-              <Link href="#" className="block hover:text-nextkey-gold transition-colors">
-                GoFundMe
-              </Link>
+            <div className="space-y-2 text-sm">
+              <Link href="/programs" className="block hover:text-nextkey-gold transition-colors">Our Programs</Link>
+              <Link href="/get-involved" className="block hover:text-nextkey-gold transition-colors">Get Involved</Link>
+              <Link href="/events" className="block hover:text-nextkey-gold transition-colors">Events</Link>
+              <Link href="#" className="block hover:text-nextkey-gold transition-colors">Bonfire Merch</Link>
+              <Link href="#" className="block hover:text-nextkey-gold transition-colors">GoFundMe</Link>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
-            <div className="space-y-2">
-              <p className="text-sm">501(c)(3) status pending</p>
-              <Link href="/privacy" className="block hover:text-nextkey-gold transition-colors text-sm">
-                Privacy Policy
-              </Link>
+            <div className="space-y-2 text-sm">
+              <p>
+                NextKey Housing Access Foundation Inc. is a nonprofit organization based in New York, incorporated in 2025.
+                We are currently in the process of applying for federal 501(c)(3) tax-exempt status.
+              </p>
+              <p>
+                Donations are being accepted to support our mission but may not be tax-deductible until IRS approval is confirmed.
+                EIN and legal documents available upon request.
+              </p>
+              <Link href="/privacy" className="block hover:text-nextkey-gold transition-colors">Privacy Policy</Link>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-purple-400 mt-8 pt-8 text-center">
-          <p className="text-sm">
+        <div className="border-t border-purple-400 mt-8 pt-8 text-center text-sm">
+          <p>
             © {new Date().getFullYear()} NextKey Housing Access Foundation. All rights reserved.
           </p>
         </div>

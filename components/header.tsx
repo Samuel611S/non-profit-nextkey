@@ -10,12 +10,12 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Programs", href: "/programs" },
-    { name: "Get Involved", href: "/get-involved" },
-    { name: "Events", href: "/events" },
-    { name: "Contact", href: "/contact" },
-  ]
+  { name: "How It Works", href: "/programs" },
+  { name: "Join Waitlist", href: "/get-involved" },
+  { name: "For Investors", href: "/events" },
+  { name: "Contact", href: "/contact" },
+]
+
 
   return (
     <header className="bg-white shadow-sm border-b-2 border-nextkey-purple">
@@ -30,9 +30,9 @@ export function Header() {
               className="h-12 w-auto"
             />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-nextkey-purple">NextKey Housing Access</h1>
-              <p className="text-sm text-gray-600">Foundation</p>
-            </div>
+              <h1 className="text-xl font-bold text-nextkey-purple">NextKey</h1>
+              <p className="text-sm text-gray-600">Equity. Access. Impact.</p>
+          </div>
           </Link>
 
           {/* Desktop Navigation */}

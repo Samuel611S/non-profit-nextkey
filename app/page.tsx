@@ -12,14 +12,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold text-nextkey-purple mb-6">
-                Unlock Hope,
-                <br />
-                Unlock Home
-              </h1>
-              <p className="text-xl text-gray-700 mb-8">
-                NextKey Housing Access Foundation is dedicated to breaking down barriers to stable housing and
-                empowering communities through comprehensive support services.
-              </p>
+                    Tech That Unlocks Housing, <br />
+                    Not Just Listings
+                  </h1>
+                  <p className="text-xl text-gray-700 mb-8">
+                    Where community meets code. NextKey is a Black-founded nonprofit blending technology with real-world impact
+                    to disrupt housing inequality and unlock access for all.
+                  </p>
               <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl">
                   Get Involved
@@ -44,6 +43,75 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+              {/* Built for Impact Section */}
+        <section id="impact" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold text-nextkey-purple mb-6">
+              Built for Impact. Designed to Scale.
+            </h2>
+            <p className="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+              NextKey uses smart housing tools to streamline the rental process, reduce discrimination, and empower underserved communities with equitable access to housing.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-left">
+              <Card>
+                <CardContent className="p-6 flex items-start gap-4">
+                  <Users className="h-8 w-8 text-nextkey-purple mt-1" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-nextkey-purple mb-2">
+                      Empowers Underserved Renters
+                    </h3>
+                    <p className="text-gray-700">
+                      Helps renters navigate complex housing systems with clarity, dignity, and support.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6 flex items-start gap-4">
+                  <Home className="h-8 w-8 text-nextkey-purple mt-1" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-nextkey-purple mb-2">
+                      Bridges Landlord Communication
+                    </h3>
+                    <p className="text-gray-700">
+                      Simplifies relationships between property owners and renters through transparent engagement.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6 flex items-start gap-4">
+                  <Heart className="h-8 w-8 text-nextkey-purple mt-1" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-nextkey-purple mb-2">
+                      Equity-First Design
+                    </h3>
+                    <p className="text-gray-700">
+                      Built with direct community feedback and equity embedded in every layer of the experience.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6 flex items-start gap-4">
+                  <GraduationCap className="h-8 w-8 text-nextkey-purple mt-1" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-nextkey-purple mb-2">
+                      Ready to Scale with Impact
+                    </h3>
+                    <p className="text-gray-700">
+                      Backed by early traction, growing interest, and a model designed to scale across communities.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
 
       {/* Mission Statement */}
       <section className="py-16 bg-white">
@@ -58,35 +126,55 @@ export default function HomePage() {
       </section>
 
       {/* Who We Serve */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-nextkey-purple text-center mb-12">Who We Serve</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center">
+          <section className="py-16 bg-gray-50">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 className="text-3xl font-bold text-nextkey-purple mb-12">Built for Impact. Designed to Scale.</h2>
+                <div className="grid md:grid-cols-3 gap-8 text-left">
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold text-nextkey-purple mb-3">The Problem</h3>
+                      <p className="text-gray-700">
+                        Underserved renters face discrimination, systemic barriers, and confusing bureaucracies that limit housing access.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold text-nextkey-purple mb-3">Our Approach</h3>
+                      <p className="text-gray-700">
+                        NextKey blends technology, policy advocacy, and grassroots partnerships to create scalable, equity-first solutions.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold text-nextkey-purple mb-3">Social Impact</h3>
+                      <p className="text-gray-700">
+                        Our programs are helping renters secure stable homes, landlords access vetted tenants, and communities thrive.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-nextkey-purple mb-6">Why Back NextKey?</h2>
+          <p className="text-lg text-gray-700 mb-8">
+            Investors and partners are joining us to transform the housing landscape through equity-centered innovation.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6 text-left">
+            <Card>
               <CardContent className="p-6">
-                <Home className="h-12 w-12 text-nextkey-purple mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Families in Crisis</h3>
-                <p className="text-gray-600">
-                  Providing emergency housing assistance to families facing eviction or homelessness.
-                </p>
+                <h3 className="text-xl font-semibold text-nextkey-purple mb-2">Backed by Early Traction</h3>
+                <p className="text-gray-600">500+ users. 3 pilot programs. Community demand accelerating.</p>
               </CardContent>
             </Card>
-            <Card className="text-center">
+            <Card>
               <CardContent className="p-6">
-                <GraduationCap className="h-12 w-12 text-nextkey-purple mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Youth & Students</h3>
-                <p className="text-gray-600">
-                  Supporting young people through our NextKey Rising program and school-based outreach.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Users className="h-12 w-12 text-nextkey-purple mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Community Members</h3>
-                <p className="text-gray-600">
-                  Building stronger communities through education, advocacy, and resource connection.
-                </p>
+                <h3 className="text-xl font-semibold text-nextkey-purple mb-2">Designed for Scale</h3>
+                <p className="text-gray-600">Cloud-native, API-first architecture ready for citywide deployment.</p>
               </CardContent>
             </Card>
           </div>
