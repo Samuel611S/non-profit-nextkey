@@ -6,12 +6,13 @@ export function Footer() {
     <footer className="bg-nextkey-purple text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Contact */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <div className="space-y-2 text-sm">
               <p className="flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                <a href="mailto:NextKeyFoundation.com@gmail.com">NextKeyFoundation.com@gmail.com</a>
+                <a href="mailto:contact@nextkeyhousing.org">contact@nextkeyhousing.org</a>
               </p>
               <p className="flex items-center">
                 <Instagram className="h-4 w-4 mr-2" />
@@ -19,11 +20,13 @@ export function Footer() {
               </p>
               <p className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
-                New York, NY
+                Founded in NYC
               </p>
+              <p className="text-xs text-purple-200">EIN: 00-0000000</p>
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2 text-sm">
@@ -35,6 +38,7 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Legal */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <div className="space-y-2 text-sm">

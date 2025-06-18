@@ -10,12 +10,11 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
-  { name: "How It Works", href: "/programs" },
-  { name: "Join Waitlist", href: "/get-involved" },
-  { name: "For Investors", href: "/events" },
-  { name: "Contact", href: "/contact" },
-]
-
+    { name: "How It Works", href: "/programs" },
+    { name: "Join Waitlist", href: "/get-involved" },
+    { name: "For Investors", href: "/events" },
+    { name: "Contact", href: "/contact" },
+  ]
 
   return (
     <header className="bg-white shadow-sm border-b-2 border-nextkey-purple">
@@ -32,7 +31,7 @@ export function Header() {
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-nextkey-purple">NextKey</h1>
               <p className="text-sm text-gray-600">Equity. Access. Impact.</p>
-          </div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -46,7 +45,15 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl">Donate Now</Button>
+            <a
+              href="https://donorbox.org/your-campaign" // 🔁 Replace this with your actual donation link
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl">
+                Donate Now
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -71,7 +78,15 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl w-full mt-4 px-6 py-3">Donate Now</Button>
+              <a
+                href="https://donorbox.org/your-campaign" // 🔁 Replace this too
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl w-full mt-4 px-6 py-3">
+                  Donate Now
+                </Button>
+              </a>
             </div>
           </div>
         )}

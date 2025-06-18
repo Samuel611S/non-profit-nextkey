@@ -34,26 +34,26 @@ export default function GetInvolvedPage() {
               <form className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Your first name" />
+                    <Label htmlFor="volunteerFirstName">First Name</Label>
+                    <Input id="volunteerFirstName" placeholder="Your first name" />
                   </div>
                   <div>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Your last name" />
+                    <Label htmlFor="volunteerLastName">Last Name</Label>
+                    <Input id="volunteerLastName" placeholder="Your last name" />
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="your.email@example.com" />
+                  <Label htmlFor="volunteerEmail">Email</Label>
+                  <Input id="volunteerEmail" type="email" placeholder="your.email@example.com" />
                 </div>
                 <div>
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                  <Label htmlFor="volunteerPhone">Phone</Label>
+                  <Input id="volunteerPhone" type="tel" placeholder="(555) 123-4567" />
                 </div>
                 <div>
-                  <Label htmlFor="interests">Areas of Interest</Label>
+                  <Label htmlFor="volunteerInterests">Areas of Interest</Label>
                   <Textarea
-                    id="interests"
+                    id="volunteerInterests"
                     placeholder="Tell us about your skills and how you'd like to help..."
                     rows={4}
                   />
@@ -63,59 +63,99 @@ export default function GetInvolvedPage() {
             </CardContent>
           </Card>
 
-          {/* Ways to Support */}
-          <div className="space-y-8">
-            {/* Sponsor a Client */}
-            <Card>
-              <CardHeader>
-                <div className="flex items-center space-x-3 mb-4">
-                  <Heart className="h-8 w-8 text-nextkey-purple" />
-                  <CardTitle className="text-xl text-nextkey-purple">Sponsor-a-Client</CardTitle>
+          {/* Partner Interest Form */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-3 mb-4">
+                <Users className="h-8 w-8 text-nextkey-purple" />
+                <CardTitle className="text-2xl text-nextkey-purple">Partner With Us</CardTitle>
+              </div>
+              <p className="text-gray-600">
+                Interested in partnering with NextKey? We'd love to hear from you and explore collaboration opportunities.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="partnerName">Full Name</Label>
+                    <Input id="partnerName" placeholder="Your full name" />
+                  </div>
+                  <div>
+                    <Label htmlFor="partnerOrg">Organization</Label>
+                    <Input id="partnerOrg" placeholder="Organization name (if applicable)" />
+                  </div>
                 </div>
-                <p className="text-gray-600">
-                  Make a direct impact by sponsoring a family's housing assistance or program participation.
-                </p>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full bg-nextkey-gold text-nextkey-purple hover:bg-yellow-500 rounded-xl">
-                  Learn About Sponsorship
-                </Button>
-              </CardContent>
-            </Card>
+                <div>
+                  <Label htmlFor="partnerEmail">Email</Label>
+                  <Input id="partnerEmail" type="email" placeholder="your.email@example.com" />
+                </div>
+                <div>
+                  <Label htmlFor="partnerMessage">Message</Label>
+                  <Textarea
+                    id="partnerMessage"
+                    placeholder="Let us know how you'd like to partner with us..."
+                    rows={4}
+                  />
+                </div>
+                <Button className="w-full bg-nextkey-purple hover:bg-purple-800">Submit Partnership Interest</Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
 
-            {/* Merch Box */}
-            <Card>
-              <CardHeader>
-                <div className="flex items-center space-x-3 mb-4">
-                  <ShoppingBag className="h-8 w-8 text-nextkey-purple" />
-                  <CardTitle className="text-xl text-nextkey-purple">Merch Box (Nonprofit)</CardTitle>
-                </div>
-                <p className="text-gray-600">
-                  Support our mission while representing NextKey with our branded merchandise.
-                </p>
-                <p className="text-sm text-gray-500 mt-2">All proceeds go toward direct housing support.</p>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl">Shop Bonfire Merch</Button>
-              </CardContent>
-            </Card>
+        {/* Ways to Support */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
+          {/* Sponsor a Client */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-3 mb-4">
+                <Heart className="h-8 w-8 text-nextkey-purple" />
+                <CardTitle className="text-xl text-nextkey-purple">Sponsor-a-Client</CardTitle>
+              </div>
+              <p className="text-gray-600">
+                Make a direct impact by sponsoring a family's housing assistance or program participation.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <Button className="w-full bg-nextkey-gold text-nextkey-purple hover:bg-yellow-500 rounded-xl">
+                Learn About Sponsorship
+              </Button>
+            </CardContent>
+          </Card>
 
-            {/* GoFundMe */}
-            <Card>
-              <CardHeader>
-                <div className="flex items-center space-x-3 mb-4">
-                  <DollarSign className="h-8 w-8 text-nextkey-purple" />
-                  <CardTitle className="text-xl text-nextkey-purple">Emergency Housing Fund</CardTitle>
-                </div>
-                <p className="text-gray-600">Your donation directly supports families facing housing emergencies.</p>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-xl">
-                  Support our Emergency Housing Fund
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          {/* Merch Box */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-3 mb-4">
+                <ShoppingBag className="h-8 w-8 text-nextkey-purple" />
+                <CardTitle className="text-xl text-nextkey-purple">Merch Box (Nonprofit)</CardTitle>
+              </div>
+              <p className="text-gray-600">
+                Support our mission while representing NextKey with our branded merchandise.
+              </p>
+              <p className="text-sm text-gray-500 mt-2">All proceeds go toward direct housing support.</p>
+            </CardHeader>
+            <CardContent>
+              <Button className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl">Shop Bonfire Merch</Button>
+            </CardContent>
+          </Card>
+
+          {/* GoFundMe */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-3 mb-4">
+                <DollarSign className="h-8 w-8 text-nextkey-purple" />
+                <CardTitle className="text-xl text-nextkey-purple">Emergency Housing Fund</CardTitle>
+              </div>
+              <p className="text-gray-600">Your donation directly supports families facing housing emergencies.</p>
+            </CardHeader>
+            <CardContent>
+              <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-xl">
+                Support our Emergency Housing Fund
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Impact Statement */}
