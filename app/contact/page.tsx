@@ -88,12 +88,13 @@ export default function ContactPage() {
               <form
                 name="contact"
                 method="POST"
-                action="/api/submit-form"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/thank-you"
                 className="space-y-6"
               >
-                {/* Required for Netlify API route */}
                 <input type="hidden" name="form-name" value="contact" />
-                <input type="text" name="bot-field" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                <input type="hidden" name="bot-field" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
