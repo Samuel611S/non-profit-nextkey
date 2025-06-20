@@ -1,9 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Heart, Users, ShoppingBag, DollarSign } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Heart, Users, ShoppingBag, DollarSign } from "lucide-react";
 
 export default function GetInvolvedPage() {
   return (
@@ -31,34 +31,49 @@ export default function GetInvolvedPage() {
               </p>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form
+                name="volunteer"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/thank-you"
+                className="space-y-4"
+              >
+                {/* Hidden for Netlify */}
+                <input type="hidden" name="form-name" value="volunteer" />
+                <input type="hidden" name="bot-field" />
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="volunteerFirstName">First Name</Label>
-                    <Input id="volunteerFirstName" placeholder="Your first name" />
+                    <Input id="volunteerFirstName" name="firstName" placeholder="Your first name" required />
                   </div>
                   <div>
                     <Label htmlFor="volunteerLastName">Last Name</Label>
-                    <Input id="volunteerLastName" placeholder="Your last name" />
+                    <Input id="volunteerLastName" name="lastName" placeholder="Your last name" required />
                   </div>
                 </div>
                 <div>
                   <Label htmlFor="volunteerEmail">Email</Label>
-                  <Input id="volunteerEmail" type="email" placeholder="your.email@example.com" />
+                  <Input id="volunteerEmail" name="email" type="email" placeholder="your.email@example.com" required />
                 </div>
                 <div>
                   <Label htmlFor="volunteerPhone">Phone</Label>
-                  <Input id="volunteerPhone" type="tel" placeholder="(555) 123-4567" />
+                  <Input id="volunteerPhone" name="phone" type="tel" placeholder="(555) 123-4567" />
                 </div>
                 <div>
                   <Label htmlFor="volunteerInterests">Areas of Interest</Label>
                   <Textarea
                     id="volunteerInterests"
+                    name="interests"
                     placeholder="Tell us about your skills and how you'd like to help..."
                     rows={4}
+                    required
                   />
                 </div>
-                <Button className="w-full bg-nextkey-purple hover:bg-purple-800">Submit Volunteer Application</Button>
+                <Button className="w-full bg-nextkey-purple hover:bg-purple-800">
+                  Submit Volunteer Application
+                </Button>
               </form>
             </CardContent>
           </Card>
@@ -75,30 +90,45 @@ export default function GetInvolvedPage() {
               </p>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form
+                name="partner"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/thank-you"
+                className="space-y-4"
+              >
+                {/* Hidden for Netlify */}
+                <input type="hidden" name="form-name" value="partner" />
+                <input type="hidden" name="bot-field" />
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="partnerName">Full Name</Label>
-                    <Input id="partnerName" placeholder="Your full name" />
+                    <Input id="partnerName" name="fullName" placeholder="Your full name" required />
                   </div>
                   <div>
                     <Label htmlFor="partnerOrg">Organization</Label>
-                    <Input id="partnerOrg" placeholder="Organization name (if applicable)" />
+                    <Input id="partnerOrg" name="organization" placeholder="Organization name (if applicable)" />
                   </div>
                 </div>
                 <div>
                   <Label htmlFor="partnerEmail">Email</Label>
-                  <Input id="partnerEmail" type="email" placeholder="your.email@example.com" />
+                  <Input id="partnerEmail" name="email" type="email" placeholder="your.email@example.com" required />
                 </div>
                 <div>
                   <Label htmlFor="partnerMessage">Message</Label>
                   <Textarea
                     id="partnerMessage"
+                    name="message"
                     placeholder="Let us know how you'd like to partner with us..."
                     rows={4}
+                    required
                   />
                 </div>
-                <Button className="w-full bg-nextkey-purple hover:bg-purple-800">Submit Partnership Interest</Button>
+                <Button className="w-full bg-nextkey-purple hover:bg-purple-800">
+                  Submit Partnership Interest
+                </Button>
               </form>
             </CardContent>
           </Card>
@@ -137,19 +167,15 @@ export default function GetInvolvedPage() {
               <p className="text-sm text-gray-500 mt-2">All proceeds go toward direct housing support.</p>
             </CardHeader>
             <CardContent>
-              <Button
-  className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl"
-  asChild
->
-  <a
-    href="https://www.bonfire.com/unlock-hope160unlock-housing/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Shop Bonfire Merch
-  </a>
-</Button>
-
+              <Button className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl" asChild>
+                <a
+                  href="https://www.bonfire.com/unlock-hope160unlock-housing/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Bonfire Merch
+                </a>
+              </Button>
             </CardContent>
           </Card>
 
@@ -163,19 +189,15 @@ export default function GetInvolvedPage() {
               <p className="text-gray-600">Your donation directly supports families facing housing emergencies.</p>
             </CardHeader>
             <CardContent>
-              <Button
-  className="w-full bg-green-600 hover:bg-green-700 text-white rounded-xl"
-  asChild
->
-  <a
-    href="https://www.gofundme.com/f/led-by-us-built-for-all-a-new-vision-for-housing-access"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Support our Emergency Housing Fund
-  </a>
-</Button>
-
+              <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-xl" asChild>
+                <a
+                  href="https://www.gofundme.com/f/led-by-us-built-for-all-a-new-vision-for-housing-access"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Support our Emergency Housing Fund
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>
@@ -191,5 +213,5 @@ export default function GetInvolvedPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

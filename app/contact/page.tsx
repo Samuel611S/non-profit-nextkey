@@ -1,9 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Instagram } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Instagram } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -34,7 +34,6 @@ export default function ContactPage() {
                     <p className="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
                   </div>
                 </div>
-
                 <div className="flex items-start space-x-4">
                   <Instagram className="h-6 w-6 text-nextkey-purple mt-1" />
                   <div>
@@ -43,7 +42,6 @@ export default function ContactPage() {
                     <p className="text-sm text-gray-500 mt-1">Follow us for updates and community stories</p>
                   </div>
                 </div>
-
                 <div className="flex items-start space-x-4">
                   <MapPin className="h-6 w-6 text-nextkey-purple mt-1" />
                   <div>
@@ -87,36 +85,53 @@ export default function ContactPage() {
               <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
             </CardHeader>
             <CardContent>
-              <form className="space-y-6">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/thank-you"
+                className="space-y-6"
+              >
+                {/* Required by Netlify */}
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName">First Name *</Label>
-                    <Input id="firstName" placeholder="Your first name" required />
+                    <Input id="firstName" name="firstName" placeholder="Your first name" required />
                   </div>
                   <div>
                     <Label htmlFor="lastName">Last Name *</Label>
-                    <Input id="lastName" placeholder="Your last name" required />
+                    <Input id="lastName" name="lastName" placeholder="Your last name" required />
                   </div>
                 </div>
 
                 <div>
                   <Label htmlFor="email">Email *</Label>
-                  <Input id="email" type="email" placeholder="your.email@example.com" required />
+                  <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
                 </div>
 
                 <div>
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                  <Input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" />
                 </div>
 
                 <div>
                   <Label htmlFor="subject">Subject *</Label>
-                  <Input id="subject" placeholder="What is this regarding?" required />
+                  <Input id="subject" name="subject" placeholder="What is this regarding?" required />
                 </div>
 
                 <div>
                   <Label htmlFor="message">Message *</Label>
-                  <Textarea id="message" placeholder="Tell us how we can help you..." rows={6} required />
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us how we can help you..."
+                    rows={6}
+                    required
+                  />
                 </div>
 
                 <Button className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl" size="lg">
@@ -133,11 +148,11 @@ export default function ContactPage() {
           <p className="text-red-700 mb-4">
             If you're facing immediate eviction or homelessness, please contact us right away.
           </p>
-          <Button className="bg-red-600 hover:bg-red-700 text-white rounded-xl" size="lg" >
+          <Button className="bg-red-600 hover:bg-red-700 text-white rounded-xl" size="lg">
             Emergency Contact
           </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }
