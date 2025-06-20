@@ -213,33 +213,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Hidden Netlify Form Shim */}
-      <div hidden>
-        <form name="volunteer" data-netlify="true">
-          <input type="text" name="firstName" />
-          <input type="text" name="lastName" />
-          <input type="email" name="email" />
-          <input type="tel" name="phone" />
-          <textarea name="interests" />
-        </form>
-
-        <form name="partner" data-netlify="true">
-          <input type="text" name="fullName" />
-          <input type="text" name="organization" />
-          <input type="email" name="email" />
-          <textarea name="message" />
-        </form>
-
-        <form name="contact" data-netlify="true">
-          <input type="text" name="firstName" />
-          <input type="text" name="lastName" />
-          <input type="email" name="email" />
-          <input type="tel" name="phone" />
-          <input type="text" name="subject" />
-          <textarea name="message" />
-        </form>
-      </div>
     </div>
   );
 }
