@@ -34,14 +34,11 @@ export default function GetInvolvedPage() {
               <form
                 name="volunteer"
                 method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                action="/thank-you"
+                action="/api/submit-form"
                 className="space-y-4"
               >
-                {/* Hidden for Netlify */}
                 <input type="hidden" name="form-name" value="volunteer" />
-                <input type="hidden" name="bot-field" />
+                <input type="text" name="bot-field" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
@@ -93,14 +90,11 @@ export default function GetInvolvedPage() {
               <form
                 name="partner"
                 method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                action="/thank-you"
+                action="/api/submit-form"
                 className="space-y-4"
               >
-                {/* Hidden for Netlify */}
                 <input type="hidden" name="form-name" value="partner" />
-                <input type="hidden" name="bot-field" />
+                <input type="text" name="bot-field" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
