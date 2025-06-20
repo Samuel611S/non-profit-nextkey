@@ -137,7 +137,19 @@ export default function GetInvolvedPage() {
               <p className="text-sm text-gray-500 mt-2">All proceeds go toward direct housing support.</p>
             </CardHeader>
             <CardContent>
-              <Button className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl">Shop Bonfire Merch</Button>
+              <Button
+  className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl"
+  asChild
+>
+  <a
+    href="https://www.bonfire.com/unlock-hope160unlock-housing/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Shop Bonfire Merch
+  </a>
+</Button>
+
             </CardContent>
           </Card>
 
@@ -151,9 +163,19 @@ export default function GetInvolvedPage() {
               <p className="text-gray-600">Your donation directly supports families facing housing emergencies.</p>
             </CardHeader>
             <CardContent>
-              <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-xl">
-                Support our Emergency Housing Fund
-              </Button>
+              <Button
+  className="w-full bg-green-600 hover:bg-green-700 text-white rounded-xl"
+  asChild
+>
+  <a
+    href="https://www.gofundme.com/f/led-by-us-built-for-all-a-new-vision-for-housing-access"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Support our Emergency Housing Fund
+  </a>
+</Button>
+
             </CardContent>
           </Card>
         </div>

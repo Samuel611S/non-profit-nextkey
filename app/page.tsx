@@ -9,21 +9,27 @@ import { Heart, Home, Users, GraduationCap } from "lucide-react"
 
 const faqItems = [
   {
-    question: "What does the NextKey Housing Access Foundation do?",
+    question: "What is NextKey Housing Access Foundation?",
     answer:
-      "We’re a nonprofit dedicated to bridging the housing access gap through education, outreach, emergency aid, and tech-integrated solutions that uplift underserved communities.",
+      "We are a community-rooted nonprofit focused on expanding housing access for underserved residents—especially voucher holders. We offer outreach, support services, events, and emergency aid.",
   },
   {
-    question: "Are you a 501(c)(3)?",
+    question: "Do you provide housing placements?",
     answer:
-      "Our 501(c)(3) status is pending, but we are legally incorporated and actively serving communities.",
+      "Not directly. Our nonprofit supports housing access through education, outreach, partnerships, and tech advocacy. Placements are supported via our separate placement company, NextKey Global Solutions.",
   },
   {
-    question: "Can I volunteer or partner with you?",
+    question: "Can I volunteer or donate?",
     answer:
-      "Yes! Please fill out our interest form—there are many ways to support our mission.",
+      "Yes! You can support our mission through volunteering, donating, or spreading awareness. Visit our website to get involved.",
+  },
+  {
+    question: "Are donations tax-deductible?",
+    answer:
+      "Our 501(c)(3) status is pending. Once approved, all donations will be tax-deductible retroactively.",
   },
 ]
+
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,9 +41,15 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         onClick={() => setIsOpen(!isOpen)}
       >
         {question}
-        <span className={`transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-          ▼
-        </span>
+        <svg
+          className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
@@ -115,28 +127,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-nextkey-purple mb-8">Our Mission</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            We believe that stable housing is the foundation for thriving communities. Our mission is to provide emergency housing assistance, youth development programs, and comprehensive support services that empower individuals and families to achieve long-term housing stability and build generational wealth.
-          </p>
-        </div>
-      </section>
-
-      {/* Who We Serve */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-nextkey-purple mb-12">Built for Impact. Designed to Scale.</h2>
-          <div className="grid md:grid-cols-3 gap-8 text-left">
-            <Card><CardContent className="p-6"><h3 className="text-xl font-semibold text-nextkey-purple mb-3">The Problem</h3><p className="text-gray-700">Underserved renters face discrimination, systemic barriers, and confusing bureaucracies that limit housing access.</p></CardContent></Card>
-            <Card><CardContent className="p-6"><h3 className="text-xl font-semibold text-nextkey-purple mb-3">Our Approach</h3><p className="text-gray-700">NextKey blends technology, policy advocacy, and grassroots partnerships to create scalable, equity-first solutions.</p></CardContent></Card>
-            <Card><CardContent className="p-6"><h3 className="text-xl font-semibold text-nextkey-purple mb-3">Social Impact</h3><p className="text-gray-700">Our programs are helping renters secure stable homes, landlords access vetted tenants, and communities thrive.</p></CardContent></Card>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,16 +146,24 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-6">Ready to Make a Difference?</h2>
           <p className="text-xl mb-8">Join us in our mission to unlock hope and unlock home for families in need.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-nextkey-gold text-nextkey-purple hover:bg-yellow-500 rounded-xl">
-              Donate Now
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-purple hover:bg-purple-500 hover:text-nextkey-purple rounded-xl"
+            <a
+              href="https://www.gofundme.com/f/led-by-us-built-for-all-a-new-vision-for-housing-access"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Volunteer Today
-            </Button>
+              <Button size="lg" className="bg-nextkey-gold text-nextkey-purple hover:bg-yellow-500 rounded-xl">
+                Donate Now
+              </Button>
+            </a>
+            <a href="/get-involved">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-purple hover:bg-purple-500 hover:text-nextkey-purple rounded-xl"
+              >
+                Volunteer Today
+              </Button>
+            </a>
           </div>
         </div>
       </section>

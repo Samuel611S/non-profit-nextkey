@@ -33,8 +33,22 @@ export function Footer() {
               <Link href="/programs" className="block hover:text-nextkey-gold transition-colors">Our Programs</Link>
               <Link href="/get-involved" className="block hover:text-nextkey-gold transition-colors">Get Involved</Link>
               <Link href="/events" className="block hover:text-nextkey-gold transition-colors">Events</Link>
-              <Link href="#" className="block hover:text-nextkey-gold transition-colors">Bonfire Merch</Link>
-              <Link href="#" className="block hover:text-nextkey-gold transition-colors">GoFundMe</Link>
+              <a
+                href="https://www.bonfire.com/unlock-hope160unlock-housing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-nextkey-gold transition-colors"
+              >
+                Bonfire Merch
+              </a>
+              <a
+                href="https://www.gofundme.com/f/led-by-us-built-for-all-a-new-vision-for-housing-access"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-nextkey-gold transition-colors"
+              >
+                GoFundMe
+              </a>
             </div>
           </div>
 
