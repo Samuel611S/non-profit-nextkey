@@ -201,17 +201,7 @@ export default function GetInvolvedPage() {
             </CardContent>
           </Card>
         </div>
-
-        {/* Impact Statement */}
-        <div className="mt-16 bg-nextkey-light-purple rounded-lg p-8 text-center">
-          <h2 className="text-3xl font-bold text-nextkey-purple mb-4">Your Impact Matters</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Every volunteer hour, every donation, and every act of support helps us unlock hope and unlock home for
-            families in our community. Together, we can build a future where everyone has access to safe, stable
-            housing.
-          </p>
-        </div>
       </div>
     </div>
   );
-}
+} 
