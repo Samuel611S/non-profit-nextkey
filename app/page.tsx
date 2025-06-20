@@ -14,10 +14,11 @@ const faqItems = [
       "We are a community-rooted nonprofit focused on expanding housing access for underserved residents—especially voucher holders. We offer outreach, support services, events, and emergency aid.",
   },
   {
-    question: "Do you provide housing placements?",
-    answer:
-      "Not directly. Our nonprofit supports housing access through education, outreach, partnerships, and tech advocacy. Placements are supported via our separate placement company, NextKey Global Solutions.",
-  },
+  question: "Do you provide housing placements?",
+  answer:
+    "Not directly. Our nonprofit supports housing access through education, outreach, partnerships, and tech advocacy. Placements are supported by our separate placement company, NextKey Global Solutions.",
+},
+
   {
     question: "Can I volunteer or donate?",
     answer:
@@ -29,6 +30,7 @@ const faqItems = [
       "Our 501(c)(3) status is pending. Once approved, all donations will be tax-deductible retroactively.",
   },
 ]
+
 
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
