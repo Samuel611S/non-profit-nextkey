@@ -76,12 +76,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold text-nextkey-purple mb-6">
-                Tech That Unlocks Housing, <br />
-                Not Just Listings
+                Unlock Hope, <br />
+                Unlock Home
               </h1>
               <p className="text-xl text-gray-700 mb-8">
-                Where community meets code. NextKey is a Black-founded nonprofit blending technology with real-world
-                impact to disrupt housing inequality and unlock access for all.
+                NextKey Housing Access Foundation is a Black-founded nonprofit dedicated to breaking down barriers to housing access. We combine community support, technology, and advocacy to ensure every family has the resources and dignity they need to find and maintain stable housing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl">
