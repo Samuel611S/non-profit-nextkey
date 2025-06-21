@@ -20,9 +20,9 @@ export function Footer() {
               </p>
               <p className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
-                Founded in NYC
+                New York, NY
               </p>
-              <p className="text-xs text-purple-200">EIN: 00-0000000</p>
+              <p className="text-xs text-purple-200">EIN: 33-4852690</p>
             </div>
           </div>
 
