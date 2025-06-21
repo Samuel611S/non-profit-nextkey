@@ -12,7 +12,7 @@ export function Header() {
   const navigation = [
     { name: "How It Works", href: "/programs" },
     { name: "Join Waitlist", href: "/get-involved" },
-    { name: "For Investors", href: "/events" },
+    { name: "For Investor", href: "/events" },
     { name: "Contact", href: "/contact" },
   ]
 
