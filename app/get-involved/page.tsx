@@ -19,7 +19,7 @@ export default function GetInvolvedPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Volunteer Form */}
+          {/* Volunteer Card */}
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3 mb-4">
@@ -31,50 +31,22 @@ export default function GetInvolvedPage() {
               </p>
             </CardHeader>
             <CardContent>
-              <form
-                name="volunteer"
-                method="POST"
-                action="/api/submit-form"
-                className="space-y-4"
+              <Button
+                className="w-full bg-nextkey-purple hover:bg-purple-800"
+                asChild
               >
-                <input type="text" name="bot-field" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="volunteerFirstName">First Name</Label>
-                    <Input id="volunteerFirstName" name="firstName" placeholder="Your first name" required />
-                  </div>
-                  <div>
-                    <Label htmlFor="volunteerLastName">Last Name</Label>
-                    <Input id="volunteerLastName" name="lastName" placeholder="Your last name" required />
-                  </div>
-                </div>
-                <div>
-                  <Label htmlFor="volunteerEmail">Email</Label>
-                  <Input id="volunteerEmail" name="email" type="email" placeholder="your.email@example.com" required />
-                </div>
-                <div>
-                  <Label htmlFor="volunteerPhone">Phone</Label>
-                  <Input id="volunteerPhone" name="phone" type="tel" placeholder="(555) 123-4567" />
-                </div>
-                <div>
-                  <Label htmlFor="volunteerInterests">Areas of Interest</Label>
-                  <Textarea
-                    id="volunteerInterests"
-                    name="interests"
-                    placeholder="Tell us about your skills and how you'd like to help..."
-                    rows={4}
-                    required
-                  />
-                </div>
-                <Button className="w-full bg-nextkey-purple hover:bg-purple-800">
-                  Submit Volunteer Application
-                </Button>
-              </form>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeWITqTPOOPxSnCwWc9bwzWbTPLffX9stoWuu2ZiEkvznHD3g/viewform?usp=header"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Fill Volunteer Form
+                </a>
+              </Button>
             </CardContent>
           </Card>
 
-          {/* Partner Interest Form */}
+          {/* Partner Card */}
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3 mb-4">
@@ -86,42 +58,18 @@ export default function GetInvolvedPage() {
               </p>
             </CardHeader>
             <CardContent>
-              <form
-                name="partner"
-                method="POST"
-                action="/api/submit-form"
-                className="space-y-4"
+              <Button
+                className="w-full bg-nextkey-purple hover:bg-purple-800"
+                asChild
               >
-                <input type="text" name="bot-field" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="partnerName">Full Name</Label>
-                    <Input id="partnerName" name="fullName" placeholder="Your full name" required />
-                  </div>
-                  <div>
-                    <Label htmlFor="partnerOrg">Organization</Label>
-                    <Input id="partnerOrg" name="organization" placeholder="Organization name (if applicable)" />
-                  </div>
-                </div>
-                <div>
-                  <Label htmlFor="partnerEmail">Email</Label>
-                  <Input id="partnerEmail" name="email" type="email" placeholder="your.email@example.com" required />
-                </div>
-                <div>
-                  <Label htmlFor="partnerMessage">Message</Label>
-                  <Textarea
-                    id="partnerMessage"
-                    name="message"
-                    placeholder="Let us know how you'd like to partner with us..."
-                    rows={4}
-                    required
-                  />
-                </div>
-                <Button className="w-full bg-nextkey-purple hover:bg-purple-800">
-                  Submit Partnership Interest
-                </Button>
-              </form>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdGfG2EhOFw9TFEz2mWq5J_GkW0u9YqkAnhIvqdB3ZdwEHbAA/viewform?usp=header"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Fill Partner Interest Form
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>
