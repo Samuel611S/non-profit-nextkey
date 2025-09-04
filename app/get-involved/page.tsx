@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Heart, Users, ShoppingBag, DollarSign } from "lucide-react";
+import { siteContent } from "@/lib/content";
 
 export default function GetInvolvedPage() {
   return (
@@ -11,10 +12,9 @@ export default function GetInvolvedPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-nextkey-purple mb-6">Get Involved</h1>
+          <h1 className="text-4xl font-bold text-nextkey-purple mb-6">{siteContent.pages.getInvolved.title}</h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            There are many ways to support our mission and make a difference in your community. Join us in unlocking
-            hope and unlocking home for families in need.
+            {siteContent.pages.getInvolved.subtitle}
           </p>
         </div>
 
@@ -36,11 +36,11 @@ export default function GetInvolvedPage() {
                 asChild
               >
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSeWITqTPOOPxSnCwWc9bwzWbTPLffX9stoWuu2ZiEkvznHD3g/viewform?usp=header"
+                  href={siteContent.links.volunteerForm}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Fill Volunteer Form
+                  {siteContent.cta.fillVolunteerForm}
                 </a>
               </Button>
             </CardContent>
@@ -63,11 +63,11 @@ export default function GetInvolvedPage() {
                 asChild
               >
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdGfG2EhOFw9TFEz2mWq5J_GkW0u9YqkAnhIvqdB3ZdwEHbAA/viewform?usp=header"
+                  href={siteContent.links.partnerForm}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Fill Partner Interest Form
+                  {siteContent.cta.fillPartnerForm}
                 </a>
               </Button>
             </CardContent>
@@ -89,7 +89,7 @@ export default function GetInvolvedPage() {
             </CardHeader>
             <CardContent>
               <Button className="w-full bg-nextkey-gold text-nextkey-purple hover:bg-yellow-500 rounded-xl">
-                Learn About Sponsorship
+                {siteContent.cta.learnAboutSponsorship}
               </Button>
             </CardContent>
           </Card>
@@ -109,11 +109,11 @@ export default function GetInvolvedPage() {
             <CardContent>
               <Button className="w-full bg-nextkey-purple hover:bg-purple-800 rounded-xl" asChild>
                 <a
-                  href="https://www.bonfire.com/unlock-hope160unlock-housing/"
+                  href={siteContent.links.bonfire}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Shop Bonfire Merch
+                  {siteContent.cta.shopMerch}
                 </a>
               </Button>
             </CardContent>
@@ -131,15 +131,42 @@ export default function GetInvolvedPage() {
             <CardContent>
               <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-xl" asChild>
                 <a
-                  href="https://www.gofundme.com/f/led-by-us-built-for-all-a-new-vision-for-housing-access"
+                  href={siteContent.links.gofundme}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Support our Emergency Housing Fund
+                  {siteContent.cta.supportEmergencyFund}
                 </a>
               </Button>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Newsletter Signup Section */}
+        <div id="newsletter" className="mt-16 bg-nextkey-purple text-white rounded-lg p-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">Join Our Newsletter</h2>
+          <p className="text-lg mb-6">
+            Stay updated on our latest programs, events, and community impact. Get housing resources and opportunities delivered to your inbox.
+          </p>
+          <div className="max-w-md mx-auto">
+            <form className="flex flex-col sm:flex-row gap-4">
+              <Input 
+                type="email" 
+                placeholder="Enter your email address" 
+                className="flex-1 bg-white text-gray-900 placeholder-gray-500"
+                required
+              />
+              <Button 
+                type="submit" 
+                className="bg-nextkey-gold text-nextkey-purple hover:bg-yellow-500 rounded-xl px-8"
+              >
+                Subscribe
+              </Button>
+            </form>
+            <p className="text-sm text-purple-200 mt-4">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -5,16 +5,11 @@ import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { nav } from "@/app/content/site"
+import { siteContent } from "@/lib/content"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const navigation = [
-    { name: "How It Works", href: "/programs" },
-    { name: "Join Waitlist", href: "/get-involved" },
-    { name: "For Investor", href: "/events" },
-    { name: "Contact", href: "/contact" },
-  ]
 
   return (
     <header className="bg-white shadow-sm border-b-2 border-nextkey-purple">
@@ -36,22 +31,22 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
+            {nav.primary.map((item) => (
               <Link
-                key={item.name}
+                key={item.label}
                 href={item.href}
                 className="text-gray-700 hover:text-nextkey-purple font-medium transition-colors"
               >
-                {item.name}
+                {item.label}
               </Link>
             ))}
             <a
-              href="https://donorbox.org/your-campaign" // 🔁 Replace this with your actual donation link
+              href={siteContent.links.gofundme}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl">
-                Donate Now
+                {siteContent.cta.donate}
               </Button>
             </a>
           </div>
@@ -68,23 +63,23 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-3">
-              {navigation.map((item) => (
+              {nav.primary.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.label}
                   href={item.href}
                   className="text-gray-700 hover:text-nextkey-purple font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.name}
+                  {item.label}
                 </Link>
               ))}
               <a
-                href="https://donorbox.org/your-campaign" // 🔁 Replace this too
+                href={siteContent.links.gofundme}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl w-full mt-4 px-6 py-3">
-                  Donate Now
+                  {siteContent.cta.donate}
                 </Button>
               </a>
             </div>

@@ -4,13 +4,15 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { siteContent } from "@/lib/content"
+import { hero } from "@/app/content/site"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "NextKey Housing Access Foundation",
-  description: "Unlock Hope, Unlock Home - Supporting housing access and community development",
-    generator: 'v0.dev'
+  title: `${hero.title} | ${siteContent.organization.name}`,
+  description: "NextKey Housing Access Foundation is a Black-founded, equity-driven nonprofit dedicated to breaking down barriers to housing access. We serve voucher holders, low-income families, immigrants, LGBTQIA+ individuals, youth, and all people facing housing discrimination.",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

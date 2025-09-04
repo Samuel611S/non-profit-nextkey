@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Instagram, Mail, MapPin } from "lucide-react"
+import { Instagram, Mail, MapPin, Facebook, Twitter } from "lucide-react"
+import { footer } from "@/app/content/site"
 
 export function Footer() {
   return (
@@ -12,17 +13,26 @@ export function Footer() {
             <div className="space-y-2 text-sm">
               <p className="flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                <a href="mailto:contact@nextkeyhousing.org">contact@nextkeyhousing.org</a>
-              </p>
-              <p className="flex items-center">
-                <Instagram className="h-4 w-4 mr-2" />
-                <a href="https://instagram.com/nextkeyhousing" target="_blank" rel="noopener noreferrer">@nextkeyhousing</a>
+                <a href={`mailto:${footer.contact.email}`}>{footer.contact.email}</a>
               </p>
               <p className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
-                New York, NY
+                {footer.contact.city}
               </p>
-              <p className="text-xs text-purple-200">EIN: 33-4852690</p>
+              <div className="space-y-1">
+                <p className="flex items-center">
+                  <Facebook className="h-4 w-4 mr-2" />
+                  <span>{footer.contact.social.facebook}</span>
+                </p>
+                <p className="flex items-center">
+                  <Instagram className="h-4 w-4 mr-2" />
+                  <span>{footer.contact.social.instagram}</span>
+                </p>
+                <p className="flex items-center">
+                  <Twitter className="h-4 w-4 mr-2" />
+                  <span>{footer.contact.social.x}</span>
+                </p>
+              </div>
             </div>
           </div>
 
@@ -33,22 +43,8 @@ export function Footer() {
               <Link href="/programs" className="block hover:text-nextkey-gold transition-colors">Our Programs</Link>
               <Link href="/get-involved" className="block hover:text-nextkey-gold transition-colors">Get Involved</Link>
               <Link href="/events" className="block hover:text-nextkey-gold transition-colors">Events</Link>
-              <a
-                href="https://www.bonfire.com/unlock-hope160unlock-housing/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-nextkey-gold transition-colors"
-              >
-                Bonfire Merch
-              </a>
-              <a
-                href="https://www.gofundme.com/f/led-by-us-built-for-all-a-new-vision-for-housing-access"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-nextkey-gold transition-colors"
-              >
-                GoFundMe
-              </a>
+              <Link href="/donate" className="block hover:text-nextkey-gold transition-colors">Donate</Link>
+              <Link href="/contact" className="block hover:text-nextkey-gold transition-colors">Contact</Link>
             </div>
           </div>
 
@@ -57,12 +53,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <div className="space-y-2 text-sm">
               <p>
-                NextKey Housing Access Foundation Inc. is a nonprofit organization based in New York, incorporated in 2025.
-                We are currently in the process of applying for federal 501(c)(3) tax-exempt status.
-              </p>
-              <p>
-                Donations are being accepted to support our mission but may not be tax-deductible until IRS approval is confirmed.
-                EIN and legal documents available upon request.
+                {footer.legal}
               </p>
               <Link href="/privacy" className="block hover:text-nextkey-gold transition-colors">Privacy Policy</Link>
             </div>
@@ -71,7 +62,7 @@ export function Footer() {
 
         <div className="border-t border-purple-400 mt-8 pt-8 text-center text-sm">
           <p>
-            © {new Date().getFullYear()} NextKey Housing Access Foundation. All rights reserved.
+            {footer.copyright}
           </p>
         </div>
       </div>
