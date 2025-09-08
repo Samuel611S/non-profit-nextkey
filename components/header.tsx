@@ -41,6 +41,14 @@ export function Header() {
               </Link>
             ))}
             <a
+              href={siteContent.links.workshop}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-nextkey-purple font-medium transition-colors"
+            >
+              Workshop
+            </a>
+            <a
               href={siteContent.links.gofundme}
               target="_blank"
               rel="noopener noreferrer"
@@ -73,6 +81,15 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <a
+                href={siteContent.links.workshop}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-nextkey-purple font-medium py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Workshop
+              </a>
               <a
                 href={siteContent.links.gofundme}
                 target="_blank"

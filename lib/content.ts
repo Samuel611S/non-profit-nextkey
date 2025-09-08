@@ -32,6 +32,7 @@ export const siteContent = {
     volunteerForm: "https://docs.google.com/forms/d/e/1FAIpQLSeWITqTPOOPxSnCwWc9bwzWbTPLffX9stoWuu2ZiEkvznHD3g/viewform?usp=header",
     partnerForm: "https://docs.google.com/forms/d/e/1FAIpQLSdGfG2EhOFw9TFEz2mWq5J_GkW0u9YqkAnhIvqdB3ZdwEHbAA/viewform?usp=header",
     eventTickets: "queensnyevents.com",
+    workshop: "http://nextkeyacademy.org/",
   },
 
   // Navigation
