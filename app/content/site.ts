@@ -3,6 +3,7 @@ export const nav = {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Our Mission", href: "/mission" }, // or "Who We Serve"
+    { label: "Resources", href: "/resources" },
     { label: "Get Involved", href: "/get-involved" }, // newsletter, volunteer, partner
     { label: "Surveys", href: "/surveys" },
     { label: "Donate", href: "/donate" },

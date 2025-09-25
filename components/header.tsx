@@ -2,15 +2,12 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { nav } from "@/app/content/site"
 import { siteContent } from "@/lib/content"
+import { MobileDropdownMenu } from "@/components/MobileDropdownMenu"
+import { DropdownMenu } from "@/components/DropdownMenu"
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   return (
     <header className="bg-white shadow-sm border-b-2 border-nextkey-purple">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -29,25 +26,9 @@ export function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {nav.primary.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-gray-700 hover:text-nextkey-purple font-medium transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <a
-              href={siteContent.links.workshop}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-700 hover:text-nextkey-purple font-medium transition-colors"
-            >
-              Workshop
-            </a>
+          {/* Desktop Navigation - Dropdown Menu */}
+          <div className="hidden md:flex items-center space-x-4">
+            <DropdownMenu />
             <a
               href={siteContent.links.gofundme}
               target="_blank"
@@ -60,48 +41,19 @@ export function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+          <div className="md:hidden flex items-center space-x-2">
+            <MobileDropdownMenu />
+            <a
+              href={siteContent.links.gofundme}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="sm" className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl">
+                Donate
+              </Button>
+            </a>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden pb-4">
-            <div className="flex flex-col space-y-3">
-              {nav.primary.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-gray-700 hover:text-nextkey-purple font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                href={siteContent.links.workshop}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-nextkey-purple font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Workshop
-              </a>
-              <a
-                href={siteContent.links.gofundme}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-nextkey-purple hover:bg-purple-800 text-white rounded-xl w-full mt-4 px-6 py-3">
-                  {siteContent.cta.donate}
-                </Button>
-              </a>
-            </div>
-          </div>
-        )}
       </nav>
     </header>
   )

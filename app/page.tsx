@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Home, Users, GraduationCap } from "lucide-react";
+import { Heart, Home, Users, GraduationCap, Shield } from "lucide-react";
 import { siteContent } from "@/lib/content";
 import { hero } from "@/app/content/site";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -128,6 +128,67 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Resources Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-nextkey-purple mb-6">
+              Housing Resources & Support
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Access comprehensive resources, learn about voucher programs, and understand your tenant rights.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6 text-center">
+                <Home className="h-12 w-12 text-nextkey-purple mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-nextkey-purple mb-3">
+                  Voucher Programs
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  Learn about FHEPS, CityFHEPS, and Section 8 housing assistance programs.
+                </p>
+                <Button asChild className="w-full bg-nextkey-purple hover:bg-purple-800 text-white rounded-lg">
+                  <a href="/resources">View Resources</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6 text-center">
+                <Shield className="h-12 w-12 text-nextkey-purple mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-nextkey-purple mb-3">
+                  Tenant Rights
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  Understand your rights as a tenant and learn about broker fee protections.
+                </p>
+                <Button asChild className="w-full bg-nextkey-purple hover:bg-purple-800 text-white rounded-lg">
+                  <a href="/resources">Learn More</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6 text-center">
+                <Users className="h-12 w-12 text-nextkey-purple mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-nextkey-purple mb-3">
+                  Community Partners
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  Connect with our community partners for additional support and resources.
+                </p>
+                <Button asChild className="w-full bg-nextkey-purple hover:bg-purple-800 text-white rounded-lg">
+                  <a href="/resources">Explore Partners</a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <FAQ />
 
@@ -145,15 +206,23 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button size="lg" className="bg-nextkey-gold text-nextkey-purple hover:bg-yellow-500 rounded-xl">
+              <Button size="lg" className="bg-nextkey-gold text-nextkey-purple hover:bg-yellow-500 rounded-xl font-semibold">
                 {siteContent.cta.donate}
+              </Button>
+            </a>
+            <a href="/resources">
+              <Button
+                size="lg"
+                className="bg-white text-nextkey-purple hover:bg-gray-100 rounded-xl font-semibold"
+              >
+                View Resources
               </Button>
             </a>
             <a href="/get-involved">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-purple hover:bg-purple-500 hover:text-nextkey-purple rounded-xl"
+                className="border-white text-white hover:bg-white hover:text-nextkey-purple rounded-xl font-semibold"
               >
                 {siteContent.cta.volunteer}
               </Button>
